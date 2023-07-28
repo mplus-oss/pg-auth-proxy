@@ -22,9 +22,9 @@ jobs:
       - name: Append Dockerfile
         run: |
           echo >> Dockerfile
-          echo "LABEL org.opencontainers.image.created=$(env TZ="UTC" date --rfc-3339=seconds | sed 's/ /T/')" >> client/Dockerfile
-          echo "LABEL org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}" >> client/Dockerfile
-          echo "LABEL org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}" >> client/Dockerfile
+          echo "LABEL org.opencontainers.image.created=$(env TZ="UTC" date --rfc-3339=seconds | sed 's/ /T/')" >> Dockerfile
+          echo "LABEL org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}" >> Dockerfile
+          echo "LABEL org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}" >> Dockerfile
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
